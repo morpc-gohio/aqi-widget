@@ -1,0 +1,153 @@
+:root {
+    --theme-light-text: hsl(0, 0%, 33%);
+    --theme-dark-text: hsl(0, 0%, 100%);
+    --tooltip-background: hsl(0, 0%, 100%);
+    --table-border-color: hsl(0, 0%, 86%);
+    --tooltip-font-size: 16px;
+    --legend-font-size: 12px;
+}
+
+/* *********************** */
+/*   Inline page styling   */
+/* *********************** */
+#aqi-widget-container-page {
+    background-color: inherit;
+}
+
+.legend {
+    font-size: var(--legend-font-size);
+}
+
+/* ******************************** */
+/* Forecast/Legend display tables   */
+/* ******************************** */
+.aqi-div-table {
+    display: table;
+    width: 100%;
+}
+
+.aqi-div-table-row {
+    display: table-row;
+}
+
+.aqi-div-table-heading {
+    display: table-header-group;
+}
+
+.aqi-div-table-body {
+    display: table-row-group;
+}
+
+.aqi-div-table-head {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--table-border-color);
+    display: table-cell;
+    padding: 3px 10px;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+.aqi-div-table-cell {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--table-border-color);
+    display: table-cell;
+    padding: 3px 10px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+/* ****************** */
+/*   Compact Styling  */
+/* ****************** */
+#aqi-widget-container-compact {
+    background-color: inherit;
+}
+
+#aqi_compact_view_more {
+    cursor: pointer;
+}
+
+.tippy-tooltip {
+    border: 1px solid #555;
+    background-color: var(--tooltip-background);
+}
+
+.tippy-content {
+    padding: 10px;
+    text-align: left;
+    color: var(--theme-light-text);
+    font-size: var(--tooltip-font-size);
+}
+
+/* ****************** */
+/* Dark theme styling */
+/* ****************** */
+.aqi_theme_dark {
+    color: var(--theme-dark-text);
+}
+
+/* ******************* */
+/* Light Theme Styling */
+/* ******************* */
+.aqi_theme_light {
+    color: var(--theme-light-text);
+}
+
+/* *********************************************************** */
+/* Loading Spinner                                             */
+/* Thanks to https://stephanwagner.me/only-css-loading-spinner */
+/* *********************************************************** */
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner:after {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    border-top-color: #333;
+    animation: spinner .6s linear infinite;
+}
+
+/* ******************* */
+/*   Miscellaneous     */
+/* ******************* */
+.aqi-unavailable::before {
+    content: "\26A0";
+    padding-right: 5px;
+}
+
+.aqi-alert {
+    font-weight: bold;
+}
+
+.aqi-alert::before {
+    content: "\26A0";
+    padding-right: 5px;
+}
+
+.page-wrapper img {
+    height: auto;
+    width: 100%;
+    max-width: 720px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.left_aligned {
+    text-align: left;
+}

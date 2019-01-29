@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>AQI Widget Example</title>
+    <link rel="stylesheet" href="example.css" type="text/css">
+    <link rel="stylesheet" href="aqi-widget/aqi-widget-public.css" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="aqi-widget/aqi-widget-settings.js" type="text/javascript"></script>
+    <script src="aqi-widget/aqi-widget-public.js" type="text/javascript"></script>
+    <script src="aqi-widget/tippy.all.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#toggle").click(function() {
+                if ($("#wrapper").hasClass("light-theme")) {
+                    $("#wrapper").removeClass("light-theme");
+                    $("#wrapper").addClass("dark-theme");
+
+                    $("#wrapper").find("*").removeClass("light-theme");
+                    $("#wrapper").find("*").addClass("dark-theme");
+                } else {
+                    $("#wrapper").removeClass("dark-theme");
+                    $("#wrapper").addClass("light-theme");
+
+                    $("#wrapper").find("*").removeClass("dark-theme");
+                    $("#wrapper").find("*").addClass("light-theme");
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper" class="light-theme">
+        <h1>Air Quality Widget</h1>
+        <h3>Provided by the Mid-Ohio Regional Planning Commission (MORPC) & the U.S. EPA AirNow program.</h3>
+        Review the README for more information on configuring the widget.<br>
+        This example depends on live data. It requires an AirNow API key before it will load properly.
+        <br><br>
+        <input type="button" value="Toggle Light/Dark Theme" id="toggle" />
+        <br><br>
+        <hr>
+        <h2>Compact Widget</h2>
+        This is the compact widget. It is best used in the header, footer,
+        or on the sidebar. However, it can be displayed right within the main page. It
+        can be configured to display the forcast when clicking the &#9432; icon.
+        <br><br>
+        Place the following HTML where you want the compact widget to appear:
+
+        <pre>&lt;div id="aqi-widget-container-compact"&gt;&lt;/div&gt;</pre>
+
+        To produce the following:
+        <div class="dotted-container" style="margin:auto;margin-top:25px;width: 25%;">
+            <div id="aqi-widget-container-compact"></div>
+        </div>
+
+        <br>
+        <hr>
+        <h2>Full-Page Widget</h2>
+        This is the full-page widget. It provides a lot more information than the
+        compact version. Displaying the forecast and the legend is configurable.
+        <br><br>
+        Place the following HTML where you want the full-page widget to appear:
+
+        <pre>&lt;div id="aqi-widget-container-page"&gt;&lt;/div&gt;</pre>
+
+        To produce the following:
+        <div class='dotted-container'>
+            <div id="aqi-widget-container-page"></div>
+        </div>
+    </div>
+</body>
+
+</html>
