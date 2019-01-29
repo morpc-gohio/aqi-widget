@@ -183,7 +183,6 @@
         // Index 0 will be the current day. The payload will contain the forecast
         // for 5 days. So, if we want to display the forecast, iterate through
         // the results to get the appropriate values for each day.
-        // Showing the forecast is an option on the plugin's settings page.
         if (aqiLocalSettings.show_forecast === "1") {
             forecast = "<div class='centered aqi_theme_" + theme + "'><b>Forecast</b></div><br />";
 
