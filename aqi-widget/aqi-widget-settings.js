@@ -1,18 +1,14 @@
 // ********************************************************************** //
 // Review the README for more information on configuration settings.
-// This widget is designed to be used as a Wordpress plugin or as a
-// standalone widget. For the Wordpress plugin, the settings are derived from
-// the plugin's settings within the admin area.
-
-// If this is being used as a Wordpress plugin, there's nothing to change here.
-// Otherwise, local settings need to be defined below.
-
-// It's important that each value is surround by double quotes
+// It's important that each value is surround by double quotes.
+// To obtain an AirNow API Key, create an account here:
+// https://docs.airnowapi.org/account/request/
+// None of this works without the API key!
 // ********************************************************************** //
 
 let aqiLocalSettings = {
     key: "", // your AirNow API Key
-    zip: "43215", // the reporting zip code
+    zip: "", // the reporting zip code
     show_forecast: "1", // 0 for no - 1 for yes
     show_legend: "1", // 0 for no - 1 for yes
     theme: "light", // light or dark
@@ -20,7 +16,7 @@ let aqiLocalSettings = {
     // *********** DO NOT CHANGE ANYTHING BELOW THIS SECTION ****************//
     // *************** UNLESS YOU KNOW WHAT YOU'RE DOING ********************//
     // **********************************************************************//
-    distance: "100", // the surrounding distance from the zip code
+    distance: "100", // the surrounding distance in miles from the zip code
     cors_proxy: "https://cors.io/?", //CORS proxy URL
     // Compact widget image paths
     aqi_compact_1: "aqi-widget/img/aqi_compact_1.png",
@@ -42,9 +38,3 @@ Children, older adults and people with asthma and other respiratory diseases sho
 avoid long periods of activity outdoors. Others can help reduce air
 pollution by driving less, refueling only after sun down,
 and not using gas-powered lawn equipment.</div><hr>`;
-
-// **********************************************************************//
-// To obtain an AirNow API Key, create an account here:
-// https://docs.airnowapi.org/account/request/
-// None of this works without the API key!
-// **********************************************************************//
