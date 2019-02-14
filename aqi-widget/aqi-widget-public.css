@@ -3,8 +3,13 @@
     --theme-dark-text: hsl(0, 0%, 100%);
     --tooltip-background: hsl(0, 0%, 100%);
     --table-border-color: hsl(0, 0%, 86%);
-    --tooltip-font-size: 16px;
+    --tooltip-font-size: 14px;
     --legend-font-size: 12px;
+    --legend-color-green: hsl(80, 100%, 42%);
+    --legend-color-yellow: hsl(56, 100%, 48%);
+    --legend-color-orange: hsl(37, 100%, 46%);
+    --legend-color-red: hsl(347, 78%, 44%);
+    --legend-color-purple: hsl(318, 100%, 30%);
 }
 
 /* *********************** */
@@ -16,6 +21,31 @@
 
 .legend {
     font-size: var(--legend-font-size);
+}
+
+.legend-color-green {
+    font-weight: bold;
+    background-color: var(--legend-color-green);
+}
+
+.legend-color-yellow {
+    font-weight: bold;
+    background-color: var(--legend-color-yellow);
+}
+
+.legend-color-orange {
+    font-weight: bold;
+    background-color: var(--legend-color-orange);
+}
+
+.legend-color-red {
+    font-weight: bold;
+    background-color: var(--legend-color-red);
+}
+
+.legend-color-purple {
+    font-weight: bold;
+    background-color: var(--legend-color-purple);
 }
 
 /* ******************************** */

@@ -245,7 +245,7 @@
             legendTable += "<div class='aqi-div-table-body'>"; // start table body
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Good</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-green'>Good</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>0 - 50</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Air quality is considered satisfactory, and air pollution poses little or no risk.";
@@ -253,7 +253,7 @@
             legendTable += "</div>";
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Moderate</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-yellow'>Moderate</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>51 to 100</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Air quality is acceptable; however, for some pollutants there may be a moderate health ";
@@ -262,7 +262,7 @@
             legendTable += "</div>";
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Unhealthy for Sensitive Groups</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-orange'>Unhealthy for Sensitive Groups</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>101 to 150</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Members of sensitive groups may experience health effects. The general public is not likely to be affected.";
@@ -270,7 +270,7 @@
             legendTable += "</div>";
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Unhealthy</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-red'>Unhealthy</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>151 to 200</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Everyone may begin to experience health effects&#59; ";
@@ -279,14 +279,14 @@
             legendTable += "</div>";
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Very Unhealthy</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-purple'>Very Unhealthy</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>201 to 300</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Health alert: everyone may experience more serious health effects.</div>";
             legendTable += "</div>";
 
             legendTable += "<div class='aqi-div-table-row'>";
-            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>Hazardous</div>";
+            legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend legend-color-purple'>Hazardous</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>301 to 500</div>";
             legendTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + " legend'>";
             legendTable += "Health warnings of emergency conditions. The entire population is more likely to be affected.";
