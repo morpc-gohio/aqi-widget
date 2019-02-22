@@ -47,7 +47,7 @@ Ignore every other value in that file unless you know what you're doing.
 
 ## Using the Widget
 Within the HTML file of the page where you want the widget to be displayed,
-ensure that the following is included between the <head></head> tags or right
+ensure that the following is included between the HEAD tag or right
 before the closing BODY tag:
 
 ```
@@ -76,7 +76,7 @@ Place the following HTML where you want the **full-page widget** to appear:
 ```
 
 See example.html for an example of using the widget. Important note: You must
-have an API key to use the example.
+have an API key to use the example and it must be configured using the steps above.
 
 ## You Should Know
 * Due to browser security, in order to receive air quality data, a <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>
