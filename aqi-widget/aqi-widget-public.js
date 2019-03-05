@@ -211,13 +211,58 @@
 
             forecastTable += "<div class='aqi-div-table-body'>"; // start table body
 
-            results.forEach(function(result) {
-                forecastTable += "<div class='aqi-div-table-row'>";
-                forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + result.DateForecast + "</div>";
-                forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + getAQIDisplayVal(result) + "</div>";
-                forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + result.Category.Name + "</div>";
-                forecastTable += "</div>";
+            // Determine if there duplicate forecast dates. If so, then the
+            // reporting agency could be reporting on O3 - Ozone and
+            // PM2.5 - Particulate Matter. We need need to determine which is
+            // the higher of the two and display that.
+            let forecastFiltered = false;
+            let distinctForecastDates = [...new Set(results.map(result => result.DateForecast.trim()))];
+
+            distinctForecastDates.forEach(forecastDate => {
+                let duplicates = [];
+
+                for (var i = 0; i < results.length; i++) {
+                    if (results[i].DateForecast.trim() == forecastDate) {
+                        duplicates.push({
+                            index: i,
+                            aqi: results[i].AQI
+                        });
+                    }
+                }
+
+                let aqis = [];
+
+                // there were duplicates found - determine the highest aqi
+                // and display that record on the forecast
+                if (duplicates.length > 1) {
+                    forecastFiltered = true;
+
+                    duplicates.forEach(item => {
+                        aqis.push(item.aqi);
+                    });
+
+                    let maxAQI = Math.max.apply(Math, aqis);
+                    let childIdx = duplicates.findIndex(aqis => aqis.aqi === maxAQI);
+                    let parentIdx = duplicates[childIdx].index;
+
+                    forecastTable += "<div class='aqi-div-table-row'>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + results[parentIdx].DateForecast + "</div>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + getAQIDisplayVal(results[parentIdx].AQI) + "</div>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + results[parentIdx].Category.Name + "</div>";
+                    forecastTable += "</div>";
+                }
             });
+
+            // No duplicates were found so just display what was given
+            if (forecastFiltered === false) {
+                results.forEach(function(result) {
+                    forecastTable += "<div class='aqi-div-table-row'>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + result.DateForecast + "</div>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + getAQIDisplayVal(result.AQI) + "</div>";
+                    forecastTable += "<div class='aqi-div-table-cell aqi_theme_" + theme + "'>" + result.Category.Name + "</div>";
+                    forecastTable += "</div>";
+                });
+            }
 
             forecastTable += "</div>"; // end table body
             forecastTable += "</div><br />"; // end table
@@ -300,18 +345,18 @@
         return legendTable;
     }
 
-    function getAQIDisplayVal(payload) {
+    function getAQIDisplayVal(aqi) {
         // The reported AQI index is not consistent. There's a chance that it
         // is specified as -1, which is suspected to mean that the reporting
         // agency did not provide the information. If the AQI index is missing or is
         // -1, then display Not Provided.
         let aqiDisplayVal = "";
 
-        if (typeof payload.AQI !== "undefined") {
-            if (payload.AQI === -1 || payload.AQI === "") {
+        if (typeof aqi !== "undefined") {
+            if (aqi === -1 || aqi === "") {
                 aqiDisplayVal = "Not Provided";
             } else {
-                aqiDisplayVal = payload.AQI;
+                aqiDisplayVal = aqi;
             }
         } else {
             aqiDisplayVal = "Not Provided";
