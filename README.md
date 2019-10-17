@@ -80,9 +80,9 @@ have an API key to use the example and it must be configured using the steps abo
 
 ## You Should Know
 * Due to browser security, in order to receive air quality data, a <a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing">CORS</a>
-proxy service must be used. By default, https://cors.io/ is configured but there are others available.
+proxy service must be used. By default, https://cors-gohio.herokuapp.com/ is configured but there are others available.
 It's OK to leave this set at the default value. In the future, if there are issues with getting
-data because cors.io is down, another proxy service can be configured.
+data because the service is down, another proxy service can be configured.
 
 * AirNow limits 500 api calls per key, per hour. To help mitigate this limitation,
 the first time a user accesses a page where the widget is present, the data is stored
