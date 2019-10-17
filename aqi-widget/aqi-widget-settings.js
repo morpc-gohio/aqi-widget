@@ -17,7 +17,7 @@ let aqiLocalSettings = {
     // *************** UNLESS YOU KNOW WHAT YOU'RE DOING ********************//
     // **********************************************************************//
     distance: "100", // the surrounding distance in miles from the zip code
-    cors_proxy: "https://cors.io/?", //CORS proxy URL
+    cors_proxy: "https://cors-gohio.herokuapp.com/", //CORS proxy URL
     // Compact widget image paths
     aqi_compact_1: "aqi-widget/img/aqi_compact_1.png",
     aqi_compact_2: "aqi-widget/img/aqi_compact_2.png",
